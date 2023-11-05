@@ -1,11 +1,17 @@
 #include <stdio.h>
 
-int main(void)
-{
-	unsigned char num;
-	if (scanf("%hhu", &num) != 1) return -1;
+void print_binary(unsigned char num);
 
-	for (int i = 0; i < 8; i++, num <<= 1) printf("%c", (num & 0x80) ? '1' : '0');
+int main(void) {
+  unsigned char num;
+  if (scanf("%hhu", &num) != 1) return -1;
 
-	return 0;
+  print_binary(num);
+
+  return 0;
+}
+
+void print_binary(unsigned char num) {
+  for (int i = sizeof(unsigned char) * 8 - 1; i >= 0; i--)
+    printf("%d", (num >> i) & 1);
 }
