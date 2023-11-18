@@ -48,7 +48,7 @@ char* findStr(char* str, char* substr) {
                  (str[i + j] == '\0' && substr[j] != '\0'))
           break;
       }
-      if (!result) break;
+      if (result) break;
     }
   }
   return result;
