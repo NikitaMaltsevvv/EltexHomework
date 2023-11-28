@@ -12,19 +12,19 @@ int main(void)
         switch (command)
         {
         case 1:
-            add_abonent();
+            add_abonent(arr_abonents, &current_count);
             break;
 
         case 2:
-            delete_abonent();
+            delete_abonent(arr_abonents, &current_count);
             break;
 
         case 3:
-            find_abonent();
+            find_abonent(arr_abonents, &current_count);
             break;
 
         case 4:
-            print_abonents();
+            print_abonents(arr_abonents, &current_count);
             break;
 
         case 5:
@@ -44,25 +44,24 @@ void add_abonent(Abonent *parr_abonents, int *current_count)
 {
     for(int i = 0; i < COUNT_ARG_STRUCT; i++)
     {
-        fprintf(stdin, "Enter the ");
         switch (i)
         {
         case 0:
-            fprintf(stdin, "name of abonent\n");
+            fprintf(stdin, "Enter the name of abonent\n");
             break;
         case 1:
-            fprintf(stdin, "surname of abonent\n");
+            fprintf(stdin, "Enter the surname of abonent\n");
             break;
 
         case 2:
-            fprintf(stdin, "phone of abonent\n");
+            fprintf(stdin, "Enter the phone of abonent\n");
             break;
         
         default:
             fprintf(stderr, "Error with elements of struct!");
             break;
         }
-        if(scanf("%s", (&parr_abonents[*current_count] + DELTA * i)) != 1) exit(EXIT_FAILURE);
+        if(scanf("%s", (parr_abonents + DELTA * i)) != 1) exit(EXIT_FAILURE); //prov
     }
     *current_count++;
 }
@@ -71,10 +70,10 @@ void delete_abonent(Abonent *parr_abonents, int *current_count)
 {
     char name[10];
     fprintf(stdin, "Enter the name of abonent which you want to delete\n");
-    if(scanf("%s", name) != 1) exit(EXIT_FAILURE);
+    if(scanf("%s", name) != 1) exit(EXIT_FAILURE); //prov
     for(int i = 0; i < *current_count; i++)
     {
-        if(parr_abonents[i].name )
+        if()
     }
 }
 

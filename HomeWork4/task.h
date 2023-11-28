@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stdlib.h>
+#inclide <string.h>
 #define COUNT_ABONENTS 100
 #define COUNT_ARG_STRUCT 3
 #define DELTA 10
